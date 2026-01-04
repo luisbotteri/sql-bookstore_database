@@ -54,3 +54,11 @@ WHERE
 LIKE '%Yes%'
 ORDER BY 
 	nobel_prize DESC;
+------------------------------------------------------------------------------------
+SELECT DISTINCT
+	title, released_year
+FROM
+	books
+ORDER BY
+	released_year DESC;
+------------------------------------------------------------------------------------	
