@@ -102,3 +102,15 @@ FROM
     book_sales ON books.book_id = book_sales.id
 ORDER BY author_fname , units_sold DESC;
 ------------------------------------------------------------------------------------
+SELECT 
+    title AS Title,
+    author_fname,
+    author_lname AS Author,
+    units_sold AS Units
+FROM
+    books
+        JOIN
+    book_sales ON books.book_id = book_sales.id
+ORDER BY units_sold DESC
+LIMIT 10;
+------------------------------------------------------------------------------------
