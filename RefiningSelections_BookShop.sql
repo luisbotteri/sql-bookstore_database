@@ -76,7 +76,7 @@ WHERE
     nobel_prize = 'Yes'
 ORDER BY pages ASC;
 ------------------------------------------------------------------------------------
-SELECT 
+SELECT DISTINCT
     title AS Book,
     CONCAT(LEFT(author_fname, 1),
             '.',
@@ -86,4 +86,19 @@ SELECT
 FROM
     books
 ORDER BY released_year DESC;
+------------------------------------------------------------------------------------
+SELECT 
+    title AS Books,
+    CONCAT(LEFT(author_fname, 1),
+            '.',
+            ' ',
+            author_lname) AS Author,
+    released_year AS Released_Year,
+    sales_year AS Sales_Year,
+    units_sold AS Units_Sold
+FROM
+    books
+        JOIN
+    book_sales ON books.book_id = book_sales.id
+ORDER BY author_fname , units_sold DESC;
 ------------------------------------------------------------------------------------
