@@ -114,3 +114,23 @@ FROM
 ORDER BY units_sold DESC
 LIMIT 10;
 ------------------------------------------------------------------------------------
+SELECT 
+    title AS Book,
+    CONCAT_WS(' ', author_fname, author_lname) AS Author
+FROM
+    books
+WHERE
+    title LIKE '%old%';
+------------------------------------------------------------------------------------
+SELECT
+	title AS Book, 
+    CONCAT_WS(' ', author_fname, author_lname) AS Author,
+    observations AS Observations,
+    book_language AS Language
+FROM 
+	books
+WHERE
+	title LIKE '______'
+ORDER BY title DESC
+LIMIT 10;
+------------------------------------------------------------------------------------
