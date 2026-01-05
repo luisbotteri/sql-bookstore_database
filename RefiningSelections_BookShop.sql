@@ -61,4 +61,18 @@ FROM
 	books
 ORDER BY
 	released_year DESC;
-------------------------------------------------------------------------------------	
+------------------------------------------------------------------------------------
+DESC books;
+SELECT 
+    title AS book,
+    CONCAT(LEFT(author_fname, 1),
+            '.',
+            ' ',
+            author_lname) AS author,
+    pages
+FROM
+    books
+WHERE
+    nobel_prize = 'Yes'
+ORDER BY pages ASC;
+------------------------------------------------------------------------------------
